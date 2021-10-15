@@ -1,6 +1,5 @@
 class ActorsController < ApplicationController
   def actor_method
-    console 'clear'
-    console 'actor = Actor.find_by(id: "1"'
+    render json: Actor.find_by(id: params[input])
   end
 end
