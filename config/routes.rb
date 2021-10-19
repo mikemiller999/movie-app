@@ -3,4 +3,7 @@ Rails.application.routes.draw do
   get "/actor/:id", controller: "actors", action: "actor_method"
   get '/movie/:input' => 'movies#movie_method'
   get '/movies' => 'movies#movies_method'
+  post '/m_create' => 'movies#create'
+  patch '/m_update' => 'movies#update'
+  delete '/m_delete/:id' => 'movies#delete'
 end
