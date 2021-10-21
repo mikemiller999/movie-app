@@ -8,8 +8,13 @@ class MoviesController < ApplicationController
   end
 
   def create
-    Movie.create(title: params['title'], year: params['year'], plot: params['plot'])
+    m = Movie.create(title: params['title'], year: params['year'], plot: params['plot'])
     render json: {message: 'done'}
+    if m.save
+      m.save
+    else
+      render json: {message: "Validation failed, check inputs"}
+    end
   end
 
   def update
