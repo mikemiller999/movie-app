@@ -4,7 +4,7 @@ class ActorsController < ApplicationController
   end
 
   def create
-    a = Actor.new(first_name: "#{params['first_name']}", last_name: "#{params['last_name']}", known_for: "#{params['fknown_for']}", age: "#{params['age']}")
+    a = Actor.new(first_name: "#{params['first_name']}", last_name: "#{params['last_name']}", known_for: "#{params['fknown_for']}", age: "#{params['age']}", gender: params['gender'])
 
     if a.save
       a.save

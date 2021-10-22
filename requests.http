@@ -13,7 +13,8 @@ Content-Type: application/json
 {
   "title": " ",
   "year": 1,
-  "plot": " "
+  "plot": " ",
+  "gender": " "
 }
 
 ###

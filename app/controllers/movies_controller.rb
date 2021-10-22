@@ -8,7 +8,7 @@ class MoviesController < ApplicationController
   end
 
   def create
-    m = Movie.create(title: params['title'], year: params['year'], plot: params['plot'])
+    m = Movie.create(title: params['title'], year: params['year'], plot: params['plot'], english: params['english'], director: params['director'])
     render json: {message: 'done'}
     if m.save
       m.save
