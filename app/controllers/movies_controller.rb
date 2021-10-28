@@ -1,4 +1,5 @@
 class MoviesController < ApplicationController
+  before_action :authenticate_admin, except: [:movie_method, :movies_method]
   def movie_method
     render json: Movie.find_by(id: params["input"])
   end
