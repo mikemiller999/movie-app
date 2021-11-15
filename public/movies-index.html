@@ -1,5 +1,32 @@
 
-<script src="index.js" defer></script>
+<script src="moviesIndex.js" defer></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-<h1>Movies</h1>
+<template>
+  <div for="actor in actors" :key="actor.id">
+    <h1>Movies</h1>
+    <p>{{actor.id}}</p>
+  </div>
+  
+</template>
+<script>
+  /* global axios */
+import axios from "axios"
+
+
+export default {
+  data: function () {
+    return {
+      actors: []
+    };
+  },
+  methods: {
+    indexActors: function () {
+      axios.get("http://localhost:3000/actors").then(function (response) {
+      var actors = response.data;
+      console.log(actors, this.actors);
+      });
+    }
+  },
+}
+</script>

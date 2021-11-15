@@ -1,7 +1,7 @@
 class ActorsController < ApplicationController
-  before_action :authenticate_admin, except: [:actor_method]
-  def actor_method
-    render json: Actor.find_by(id: params["id"])
+  #before_action :authenticate_admin, except: [:actor_method]
+  def actors_method
+    render json: Actor.all
   end
 
   def create
